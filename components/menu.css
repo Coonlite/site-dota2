@@ -48,7 +48,7 @@ h6{
 }
 
 #accordian>ul>li.active>a{
-	color: #000000;
+	color: #ffffff;
 	background-color: transparent;
 	transition: all 0.7s;
 }
@@ -78,7 +78,7 @@ h6{
 	left: 0px;
 	transition-duration:0.6s;
 	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-	background-color: #ffffff;
+	background-color: #5C2E2E;
 	border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
 }
@@ -87,7 +87,7 @@ h6{
 	position: absolute;
 	width: 25px;
 	height: 25px;
-	background-color: #ffffff;
+	background-color: #5C2E2E;
 	right: 0;
 }
 .selector-active .top{
@@ -103,7 +103,7 @@ h6{
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: #8d8d8d;
 }
 .selector-active .top:before{
 	left: -25px;
