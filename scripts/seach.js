@@ -10,31 +10,36 @@ $(document).ready(function() {
 
         var index = $(this).index();
         $('.section').hide();
-        $('#section' + (index)).show(); // Индекс + 1, так как секции начинаются с 1
+        $('#section' + (index + 1)).show(); // Индекс + 1, так как секции начинаются с 1
     });
 
     // Обработчик клика по кнопке поиска
     $('#searchButton').on('click', function() {
         var query = $('#searchInput').val().toLowerCase(); // Получаем текст из поля ввода
-        searchHeaders(query); // Вызываем функцию поиска
+        searchAndClickCard(query); // Вызываем функцию поиска и нажатия
     });
 
-    // Функция для поиска заголовков h3
-    function searchHeaders(query) {
-        var matchedSections = [];
-    
-        // Ищем все заголовки h3 в секции 1
+    // Функция для поиска заголовков h3 и "нажатия" на соответствующую карточку
+    function searchAndClickCard(query) {
+        var found = false; // Флаг для отслеживания, найден ли заголовок
+
+        // Ищем все заголовки h3 в секции 7
         $('#section7 h3').each(function() {
             var headerText = $(this).text().toLowerCase();
             if (headerText.includes(query)) {
-                matchedSections.push(headerText); // Добавляем совпадающий заголовок в массив
+                found = true; // Заголовок найден
+                var characterName = $(this).text(); // Получаем имя персонажа
+
+                // Ищем карточку с соответствующим именем персонажа
+                $(".slide").each(function() {
+                    if ($(this).find(".slide-title").text() === characterName) {
+                        $(this).click(); // "Нажимаем" на карточку
+                    }
+                });
             }
         });
-    
-        // Если есть совпадения, выводим их
-        if (matchedSections.length > 0) {
-            alert('Найденные заголовки: \n' + matchedSections.join('\n'));
-        } else {
+
+        if (!found) {
             alert('Совпадений не найдено.');
         }
     }
@@ -44,7 +49,7 @@ $(document).ready(function() {
         var query = $(this).val().toLowerCase(); // Получаем текст из поля ввода
         var suggestions = [];
 
-        // Ищем все заголовки h3 в секции 1
+        // Ищем все заголовки h3 в секции 7
         $('#section7 h3').each(function() {
             var headerText = $(this).text().toLowerCase();
             if (headerText.includes(query) && query) {
@@ -62,7 +67,7 @@ $(document).ready(function() {
         $('#suggestions').remove();
         
         if (suggestions.length > 0) {
-            var suggestionBox = $('<ul id="suggestions"></ul>').css({
+            var suggestionBox = $('<ul id="suggestions"></ ul>').css({
                 position: 'absolute',
                 background: '#fff',
                 color: "#000000",
@@ -111,7 +116,7 @@ $(document).ready(function() {
     }
 
     // Закрытие подсказок при клике вне поля ввода и списка подсказок
-    $( document).on('click', function(event) {
+    $(document).on('click', function(event) {
         if ($(event.target).closest('#searchInput, #suggestions').length === 0) {
             $('#suggestions').remove(); // Убираем подсказки
         }

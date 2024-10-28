@@ -80,7 +80,7 @@
     opacity: 0; /* Скрываем заголовок по умолчанию */
     transform: skewY(-15deg); /*Наклон текста*/
     transition: opacity 0.3s ease; /* Плавный переход при изменении прозрачности */
-    /* Уберите transform: skewY(-30deg); */
+    user-select: none;
 }
 
 .slide:hover .slide-title {

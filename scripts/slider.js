@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    // Логика для слайдера
     let slider = $(".slider");
     let slides = $(".slide");
     let prev = $(".prev");
