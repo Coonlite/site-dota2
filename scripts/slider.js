@@ -40,22 +40,38 @@ $(document).ready(function() {
     // Обработчик для карточек
     $(".slide").on("click", function() {
         const characterName = $(this).find(".slide-title").text();
-        const characterDescription = getCharacterDescription(characterName); // Функция для получения описания персонажа
+        const characterDetails = getCharacterDetails(characterName); // Получаем детали персонажа
 
         $("#characterName").text(characterName);
-        $("#characterDescription").text(characterDescription);
+        $("#characterDescription").text(characterDetails.description);
+        $("#characterImage").attr("src", characterDetails.image).show(); // Устанавливаем изображение и показываем его
         $("#characterInfo").show(); // Показываем информацию о персонаже
     });
 
-    // Пример функции для получения описания персонажа
-    function getCharacterDescription(name) {
-        const descriptions = {
-            "Phantom Assassin": "Phantom Assassin is a melee agility hero known for her ability to deal massive damage.",
-            "Juggernaut": "Juggernaut is a melee agility hero who excels in both dealing and avoiding damage.",
-            "Muerta": "Muerta is a ranged agility hero with powerful abilities to control the battlefield.",
-            "Lina": "Lina is a ranged intelligence hero known for her high burst damage and crowd control.",
-            "Tiny": "Tiny is a melee strength hero that can deal significant damage and initiate fights."
+    // Функция для получения описания и изображения персонажа
+    function getCharacterDetails(name) {
+        const characterDetails = {
+            "Phantom Assasin": {
+                description: "Phantom Assassin is a melee agility hero known for her ability to deal massive damage.",
+                image: "../src/heroes/phantom_title.png" // Укажите путь к изображению
+            },
+            "Juggernaut": {
+                description: "Juggernaut is a melee agility hero who excels in both dealing and avoiding damage.",
+                image: "../src/heroes/phantom_title.png" // Укажите путь к изображению
+            },
+            "Muerta": {
+                description: "Muerta is a ranged agility hero with powerful abilities to control the battlefield.",
+                image: "../src/heroes/phantom_title.png" // Укажите путь к изображению
+            },
+            "Lina": {
+                description: "Lina is a ranged intelligence hero known for her high burst damage and crowd control.",
+                image: "path/to/lina_image.jpg" // Укажите путь к изображению
+            },
+            "Tiny": {
+                description: "Tiny is a melee strength hero that can deal significant damage and initiate fights.",
+                image: "path/to/tiny_image.jpg" // Укажите путь к изображению
+            }
         };
-        return descriptions[name] || "No description available.";
+        return characterDetails[name] || { description: "No description available.", image: "" };
     }
 });

@@ -36,3 +36,8 @@ h2{
 }
 /* Секция Главная */
 
+#characterInfo{
+    display: flex;
+    margin-top: 20px;
+}
+
