@@ -53,7 +53,7 @@
     background: rgba(255, 255, 255, 0.7);
     border: none;
     cursor: pointer;
-    padding: 10px;
+    padding: 60px 12px;
     font-size: 18px;
     position: absolute;
     top: 15%; /* Позиционируем по вертикали */
@@ -63,10 +63,17 @@
 
 .prev {
     left: 20.4%; /* Отступ слева, чтобы стрелочка находилась за пределами контейнера */
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+
 }
 
 .next {
     right: 5.7%; /* Отступ справа, чтобы стрелочка находилась за пределами контейнера */
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+
+.prev:hover, .next:hover{
+    background-color: black;
 }
 
 .slide-title {

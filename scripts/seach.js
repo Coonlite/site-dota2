@@ -10,7 +10,7 @@ $(document).ready(function() {
 
         var index = $(this).index();
         $('.section').hide();
-        $('#section' + (index + 1)).show(); // Индекс + 1, так как секции начинаются с 1
+        $('#section' + (index)).show(); // Индекс + 1, так как секции начинаются с 1
     });
 
     // Обработчик клика по кнопке поиска
