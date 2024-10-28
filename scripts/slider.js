@@ -53,15 +53,15 @@ $(document).ready(function() {
         const characterDetails = {
             "Phantom Assasin": {
                 description: "Phantom Assassin is a melee agility hero known for her ability to deal massive damage.",
-                image: "../src/heroes/phantom_title.png" // Укажите путь к изображению
+                image: "../src/heroes/phantom-title.png" // Укажите путь к изображению
             },
             "Juggernaut": {
                 description: "Juggernaut is a melee agility hero who excels in both dealing and avoiding damage.",
-                image: "../src/heroes/phantom_title.png" // Укажите путь к изображению
+                image: "../src/heroes/phantom-title.png" // Укажите путь к изображению
             },
             "Muerta": {
                 description: "Muerta is a ranged agility hero with powerful abilities to control the battlefield.",
-                image: "../src/heroes/phantom_title.png" // Укажите путь к изображению
+                image: "../src/heroes/phantom-title.png" // Укажите путь к изображению
             },
             "Lina": {
                 description: "Lina is a ranged intelligence hero known for her high burst damage and crowd control.",
